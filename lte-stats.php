@@ -1,5 +1,7 @@
 <?php
 
+date_default_timezone_set( 'GMT' );
+
 function get_signal() {
 	$xml = simplexml_load_file( 'http://192.168.8.1/api/device/signal' );
 	return array_map( 'strval', (array) $xml );
